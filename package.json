@@ -1,5 +1,5 @@
 {
-  "name": "electron-boilerplate",
+  "name": "dictionary",
   "version": "0.1.0",
   "main": "public/electron.js",
   "license": "MIT",
@@ -8,7 +8,7 @@
   "build": {
     "appId": "react.electron",
     "win": {
-      "icon": "build/icon.png"
+      "icon": "build/dict.png"
     }
   },
   "dependencies": {
@@ -50,5 +50,7 @@
     "electron": "^7.1.8",
     "electron-builder": "^21.2.0",
     "wait-on": "^3.3.0"
-  }
+  },
+  "description": "A Simple Dictionary by Andruraj",
+  "repository": "https://github.com/andruraj/dictionary-electron.git"
 }

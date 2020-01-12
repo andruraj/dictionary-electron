@@ -1,26 +1,50 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import dict from "./resources/dictionary.json";
 
-function App() {
+const App = () => {
+  const [word, setWord] = React.useState("");
+  const [meaning, setMeaning] = React.useState("");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div>
+      <div className="dict" style={{ margin: "20px 40px" }}>
+        <input
+          type="search"
+          name="search"
+          autoFocus
+          value={word}
+          onChange={e => setWord(e.target.value)}
+          placeholder="Search..."
+          style={{
+            border: "none",
+            borderBottom: "1px solid darkgrey",
+            textAlign: "center",
+            outline: "none",
+            fontSize: "16px",
+            padding: "5px",
+            width: "100%"
+          }}
+          onKeyPress={e => {
+            if (e.key === "Enter") {
+              setMeaning(dict[word]);
+            }
+          }}
+        />{" "}
+        <br />
+        <br />
+        <div
+          style={{
+            overflow: "auto",
+            border: meaning ? "1px solid darkgrey" : "none",
+            borderRadius: "2px",
+            padding: "10px"
+          }}
         >
-          Learn React
-        </a>
-      </header>
+          <b style={{ color: "red" }}>{word}</b> <br /> <br />
+          <p style={{ color: "blue", lineHeight: "1.5" }}>{meaning}</p>
+        </div>
+      </div>
     </div>
   );
-}
+};
 
 export default App;
