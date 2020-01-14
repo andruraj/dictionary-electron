@@ -6,7 +6,15 @@ const App = () => {
   const [meaning, setMeaning] = React.useState("");
   return (
     <div>
-      <div className="dict" style={{ margin: "20px 40px" }}>
+      <div
+        className="dict"
+        style={{
+          backgroundColor: "rgb(0,0,0,0.2)",
+          padding: "20px 20px",
+          height: "100%",
+          minHeight: "521px"
+        }}
+      >
         <input
           type="search"
           name="search"
@@ -17,6 +25,7 @@ const App = () => {
           style={{
             border: "none",
             borderBottom: "1px solid darkgrey",
+            backgroundColor: "transparent",
             textAlign: "center",
             outline: "none",
             fontSize: "16px",
