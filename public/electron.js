@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require("electron");
+const { app, BrowserWindow, Tray } = require("electron");
 
 const isDev = require("electron-is-dev");
 const path = require("path");
@@ -10,12 +10,15 @@ let win;
 function createWindow() {
   // Create the browser window.
   win = new BrowserWindow({
-    width: 800,
+    width: 400,
     height: 600,
     webPreferences: {
       nodeIntegration: true
     }
   });
+
+  //remove Menu bar
+  win.removeMenu();
 
   // and load the index.html of the app.
   win.loadURL(
