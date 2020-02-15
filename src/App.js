@@ -9,7 +9,7 @@ const App = () => {
       <div
         className="dict"
         style={{
-          backgroundColor: "rgb(0,0,0,0.2)",
+          backgroundColor: "#B2EBF2",
           padding: "20px 20px",
           height: "100%",
           minHeight: "521px"
@@ -34,7 +34,7 @@ const App = () => {
           }}
           onKeyPress={e => {
             if (e.key === "Enter") {
-              setMeaning(dict[word]);
+              setMeaning(dict[word.toLowerCase()]);
             }
           }}
         />{" "}
